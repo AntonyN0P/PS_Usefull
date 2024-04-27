@@ -1,0 +1,6 @@
+#From digital byte array to hex format
+($byte_arr|ForEach-Object ToString x2) -join ',0x'
+# 110,45,64,66 --> 0xfc,0x4,0x9
+
+#Decode from Base64
+[System.Text.Encoding]::Default.GetString([System.Convert]::FromBase64($Base64)
